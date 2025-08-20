@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "upgrade_aquatic:driftwood"
+    }
+  },
+  "result": {
+    "item": "moremorefun:qjf",
+    "count": 1
+  }
+}

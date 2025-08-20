@@ -1,0 +1,12 @@
+{
+  "wdfmsl": {
+    "subtitle": "wdfmsl",
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "moremorefun:wdfmsl",
+        "steam": true
+      }
+    ]
+  }
+}
