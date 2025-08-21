@@ -1,8 +1,7 @@
-package io.github.PAntomie;
+package io.github.PAntomie.mmf.SPFoods;
 
-import io.github.PAntomie.sounds.SoundEvents;
+import io.github.PAntomie.mmf.ModSounds;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,7 +31,7 @@ public class QJFItem extends Item {
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, Level level, @NotNull LivingEntity entity) {
         if (!level.isClientSide) {
             level.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
-                    SoundEvents.WDFMSL.get(),
+                    ModSounds.WDFMSL.get(),
                     SoundSource.PLAYERS, 0.16F, 1.0F);
         }
 

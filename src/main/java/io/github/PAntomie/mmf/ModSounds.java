@@ -1,4 +1,4 @@
-package io.github.PAntomie.sounds;
+package io.github.PAntomie.mmf;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -8,18 +8,16 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 
-public class SoundEvents {
+public class ModSounds {
+    public static void init(IEventBus a) {register(a);}
+    public static void register(IEventBus eventBus) {
+        SOUND_EVENTS.register(eventBus);
+    }
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, "moremorefun");
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () ->
                 SoundEvent.createVariableRangeEvent(new ResourceLocation("moremorefun", name)));
     }
-    public static void register(IEventBus eventBus) {
-        SOUND_EVENTS.register(eventBus);
-    }
-
-
-
     public static final RegistryObject<SoundEvent> WDFMSL = registerSoundEvent("wdfmsl");
 }
