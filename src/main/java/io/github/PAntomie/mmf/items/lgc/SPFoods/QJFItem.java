@@ -1,4 +1,4 @@
-package io.github.PAntomie.mmf.SPFoods;
+package io.github.PAntomie.mmf.items.lgc.SPFoods;
 
 import io.github.PAntomie.mmf.ModSounds;
 import net.minecraft.sounds.SoundSource;

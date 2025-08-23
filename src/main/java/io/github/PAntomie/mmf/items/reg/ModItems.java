@@ -1,4 +1,4 @@
-package io.github.PAntomie.mmf.items;
+package io.github.PAntomie.mmf.items.reg;
 
 import io.github.PAntomie.mmf.MMF;
 import net.minecraft.world.item.Item;
@@ -16,4 +16,6 @@ public class ModItems {
     };
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MMF.MODID);
+
+
 }

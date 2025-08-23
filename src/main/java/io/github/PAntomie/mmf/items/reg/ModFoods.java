@@ -1,7 +1,7 @@
-package io.github.PAntomie.mmf.items;
+package io.github.PAntomie.mmf.items.reg;
 
 import io.github.PAntomie.mmf.MMF;
-import io.github.PAntomie.mmf.SPFoods.QJFItem;
+import io.github.PAntomie.mmf.items.lgc.SPFoods.QJFItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

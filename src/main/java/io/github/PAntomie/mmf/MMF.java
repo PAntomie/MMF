@@ -1,8 +1,8 @@
 package io.github.PAntomie.mmf;
 
 import com.mojang.logging.LogUtils;
-import io.github.PAntomie.mmf.items.ModFoods;
-import io.github.PAntomie.mmf.items.ModItems;
+import io.github.PAntomie.mmf.items.reg.ModFoods;
+import io.github.PAntomie.mmf.items.reg.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
@@ -40,9 +40,10 @@ public class MMF
             .displayItems((parameters, output) -> {output.accept
                     (ModFoods.EXAMPLE_ITEM.get());
                 output.accept
-                    (ModBlocks.EXAMPLE_BLOCK_ITEM.get());
+                        (ModBlocks.EXAMPLE_BLOCK_ITEM.get());
                 output.accept
-                    (ModFoods.QJF.get());
+                        (ModFoods.QJF.get());
+
 
 
             }).build());
@@ -56,7 +57,7 @@ public class MMF
 
     public MMF(FMLJavaModLoadingContext context)
     {
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup); // Register the commonSetup method for modloading
         MinecraftForge.EVENT_BUS.register(this); // Register ourselves for server and other game events we are interested in
 
@@ -76,7 +77,12 @@ public class MMF
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
     }
+
+
+
+
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
@@ -106,10 +112,10 @@ public class MMF
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
